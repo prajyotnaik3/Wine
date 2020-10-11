@@ -26,7 +26,6 @@ X = StandardScaler().fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0, stratify = y)
 
 #Train a classifier
-#classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
 classifier = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5), activation = 'relu', random_state = 0)
 classifier.fit(X_train, y_train.ravel())
 
